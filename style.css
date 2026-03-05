@@ -1,0 +1,577 @@
+/*!
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating wil be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlcyI6WyJzdHlsZS5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qIVxyXG5UaGVtZSBOYW1lOiBFbmZvbGQgQ2hpbGRcclxuRGVzY3JpcHRpb246IEEgPGEgaHJlZj0naHR0cDovL2NvZGV4LndvcmRwcmVzcy5vcmcvQ2hpbGRfVGhlbWVzJz5DaGlsZCBUaGVtZTwvYT4gZm9yIHRoZSBFbmZvbGQgV29yZHByZXNzIFRoZW1lLiBJZiB5b3UgcGxhbiB0byBkbyBhIGxvdCBvZiBmaWxlIG1vZGlmaWNhdGlvbnMgd2UgcmVjb21tZW5kIHRvIHVzZSB0aGlzIFRoZW1lIGluc3RlYWQgb2YgdGhlIG9yaWdpbmFsIFRoZW1lLiBVcGRhdGluZyB3aWwgYmUgbXVjaCBlYXNpZXIgdGhlbi5cclxuVmVyc2lvbjogMS4wXHJcbkF1dGhvcjogS3JpZXNpXHJcbkF1dGhvciBVUkk6IGh0dHA6Ly93d3cua3JpZXNpLmF0XHJcblRlbXBsYXRlOiBlbmZvbGRcclxuKi8iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7RUFPRSJ9 */
+
+.payment_method_cheque label:after {
+    content: "(**)";
+    color: red;
+}
+
+#billing_postcode_field {
+    float: left;
+}
+#billing_city_field {
+    float: right;
+    clear: unset !important;
+}
+
+span.req-star {
+    color: red !important;
+}
+
+ .ow-custom-controls {
+     text-align: center;
+ }
+ .ow-custom-controls .ow-arhiv {
+     float: unset !important;
+     
+ }
+#countdown {
+    margin-left: -25px;
+}
+
+#top #wrap_all #main .ow-single-event {
+    width: 320px !important;
+}
+#top #wrap_all #main .ow-single-event .ow-footer-bottom {
+    justify-content: space-between !important;
+}
+
+#homepage-banner > .container .entry-content-wrapper {
+    min-height: auto !important;
+    padding-bottom: 50px;
+}
+#homepage-banner {
+    margin-bottom: 50px !important;
+}
+
+.single-post .ow-left, 
+.single-post .ow-right {
+    width: 100% !important;
+}
+.single-post .ow-right .ow-decoration-img {
+    left: 10% !important;
+    display: flex;
+    justify-content: center;
+}
+.single-post .homepage-banner-block-1 .ow-decoration-img,
+.single-post .homepage-banner-block-1 .ow-decoration-img img {
+    transform: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+}
+.single-post .homepage-banner-block-1 .ow-decoration-img img,
+.single-post .homepage-banner-block-1 .ow-homepage-img-1 {
+    height: auto !important;
+    max-height: 100% !important;
+    /*width: 100% !important;*/
+    /*max-width: 100% !important;*/
+}
+.single-post .homepage-banner-block-1 .ow-homepage-img-1 {
+    width: 100% !important;
+}
+.single-post .homepage-banner-block-1 .ow-decoration-img img {
+    margin: 0 auto !important;
+    max-height: 900px !important;
+}
+.single-post .homepage-banner-block-1 {
+    max-height: 100% !important;
+}
+
+.single-post .homepage-banner-block-1 .ow-right,
+.single-post .homepage-banner-block-1 .ow-right > div {
+    position: unset !important;
+}
+
+.single-post .ow-homepage-img-1 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.single-post #homepage-banner {
+    margin-bottom: 0 !important;
+}
+
+.single-post .ow-blog-top {
+    max-width: 1000px !important;
+}
+
+.postid-14163 .ow-left,
+.postid-14163 .ow-right,
+.postid-14166 .ow-left,
+.postid-14166 .ow-right,
+.page-id-29 .ow-right,
+.page-id-29 .ow-left,
+.single-product .ow-left,
+.single-product .ow-right
+ {
+    width: 50% !important;
+}
+
+.postid-14163 .ow-right .ow-decoration-img,
+.postid-14166 .ow-right .ow-decoration-img,
+.single-product .ow-right .ow-decoration-img,
+.page-id-29 .ow-right .ow-decoration-img
+ {
+    left: 10% !important;
+     
+ }
+ 
+ .page-id-29 #homepage-banner {
+     min-height: 900px;
+ }
+ 
+ .page-id-514 .av_one_half.first,
+ .page-id-29 .av_one_half.first {
+     width: 50% !important;
+ }
+ 
+.avia_mega_div li a {
+    flex-wrap: wrap;
+}
+
+.page-id-514 .template-page .entry-content-wrapper,
+.page-id-29 .template-page .entry-content-wrapper {
+    max-width: 70% !important;
+    margin: 0 auto !important;
+}
+
+
+.post-entry-514 .av_one_half .ow-right,
+.post-entry-29 .av_one_half .ow-right {
+    float: right !important;
+    width: 50%;
+}
+.post-entry-514 .av_one_half .ow-left,
+.post-entry-29 .av_one_half .ow-left {
+    float: left !important;
+    width: 50%;
+}
+.post-entry-514 .av_one_half,
+.post-entry-29 .av_one_half{
+    margin-left: 0 !important;
+}
+.post-entry-514 .av_one_half .ow-right,
+.post-entry-29 .av_one_half .ow-right {
+    margin-left: 10px !important;
+}
+
+
+#vec .ow-left{ width: 49% !important; }
+
+#top #wrap_all #main .ow_event_list:not(.ow-events-slider) .ow-cat-grid-wrap {
+    grid-gap: 44px !important;
+}
+
+.avia_ajax_form input[type="text"] {
+    height: 45px;
+}
+
+#footer form {
+    padding: 15px !important;
+}
+#footer form button {
+    font-size: 1rem !important;
+}
+#footer ._form-title {
+ color: #000 !important; 
+ font-weight: 600 !important;
+ font-size: 1.2rem !important;
+}
+#footer ._form-label {
+ color: #000 !important;    
+}
+
+
+/*!
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating wil be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlcyI6WyJzdHlsZS5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qIVxyXG5UaGVtZSBOYW1lOiBFbmZvbGQgQ2hpbGRcclxuRGVzY3JpcHRpb246IEEgPGEgaHJlZj0naHR0cDovL2NvZGV4LndvcmRwcmVzcy5vcmcvQ2hpbGRfVGhlbWVzJz5DaGlsZCBUaGVtZTwvYT4gZm9yIHRoZSBFbmZvbGQgV29yZHByZXNzIFRoZW1lLiBJZiB5b3UgcGxhbiB0byBkbyBhIGxvdCBvZiBmaWxlIG1vZGlmaWNhdGlvbnMgd2UgcmVjb21tZW5kIHRvIHVzZSB0aGlzIFRoZW1lIGluc3RlYWQgb2YgdGhlIG9yaWdpbmFsIFRoZW1lLiBVcGRhdGluZyB3aWwgYmUgbXVjaCBlYXNpZXIgdGhlbi5cclxuVmVyc2lvbjogMS4wXHJcbkF1dGhvcjogS3JpZXNpXHJcbkF1dGhvciBVUkk6IGh0dHA6Ly93d3cua3JpZXNpLmF0XHJcblRlbXBsYXRlOiBlbmZvbGRcclxuKi8iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7RUFPRSJ9 */
+
+
+.applicant-fields,
+#order_number_field {
+display: none;
+}
+
+.gdpr-options .ow-optional {
+    display: none;
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+display: block;
+}
+
+#billing_country_field .select2-container {
+margin-top: 10px;
+margin-bottom: 5px;
+height: 55px;
+
+}
+#billing_country_field .select2-selection {
+height: 55px !important;
+border: none !important;
+border-radius: 0 !important;
+}
+#select2-billing_country-container {
+padding-top: 0.9rem;
+padding-left: 1rem;
+}
+
+#billing_country_field .select2-selection__arrow {
+top: 15px;
+right: 20px;
+}
+
+#_top.woocommerce-checkout #wrap_all .checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0; }
+  #top.woocommerce-checkout #wrap_all .checkbox input[type="checkbox"] + .ow-checkbox-label,
+  .ow-checkbox-label.foo {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    padding-left: 40px;
+    margin-left: 0;
+    color: #231f20;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    display: inline-block; }
+  #top.woocommerce-checkout #wrap_all .checkbox input[type="checkbox"] + .ow-checkbox-label::before,
+  .foo::before{
+    /* checkbox square */
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  #top.woocommerce-checkout #wrap_all .checkbox input[type="checkbox"]:checked + .ow-checkbox-label:before,
+  .foo.checked:before {
+    /* clicked checkbox */
+    border: 0;
+    background-image: url("https://planetgv.si/wp-content/themes/enfold-child/images/checkbox.svg");
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    background-position: center; }
+  #top.woocommerce-checkout #wrap_all .checkbox input[type="checkbox"] .ow-checkbox-label {
+    text-transform: none !important; }
+    
+.gdpr-options .form-row:not(.ow-conditional-required-checkbox) {
+    display: none !important;
+}
+
+.magazines-inner-wrap .single-magazine:nth-child(2) {
+    padding-left: 0 !important;
+}
+
+.av-burger-menu-main .menu-group a,
+#top #wrap_all #header #av-burger-menu-ul > li.menu-group > a, #top #wrap_all #header #av-burger-menu-ul > li.menu-group > a:hover,
+#top #wrap_all #header #av-burger-menu-ul > li.login-button > a, #top #wrap_all #header #av-burger-menu-ul > li.login-button > a:hover {
+     background-color: unset !important;
+ }
+ 
+ .av-burger-menu-main,
+ .av-burger-menu-main > a{
+     padding: 0 !important;
+ }
+ 
+ #av-burger-menu-ul .avia-bullet {
+     background: unset !important;
+     background-color: unset !important;
+ }
+  #av-burger-menu-ul > li .sub-menu > li > a .avia-bullet {
+      display: none !important;
+  }
+  
+  .single-post .ow-list-content {
+      margin-top: -5px !important;
+  }
+  
+  
+  
+  .ow_list_title {
+      margin-top: 0 !important;
+  }
+   .single-post .ow-single-event {
+      height: 250px !important;
+  }
+  
+  .ow_event_list_sec .ow-text-white.text-center {
+      position: absolute;
+    left: 50%;
+    transform: translate(-50%, 25px);
+  }
+  
+ @media screen and (min-width: 1421px) {
+     .single-post #main .homepage-banner-block-1 .ow-left,
+     .single-post #main .homepage-banner-block-1 .ow-right {
+         width: 100% !important;
+         position: unset !important;
+     }
+    
+    .single-post #main .homepage-banner-block-1 {
+        margin-bottom: 0 !important;
+    } 
+    
+    .single-post #main .homepage-banner-block-1 .ow-right .ow-decoration-img {
+         position: unset !important;
+         margin-top: 50px;
+    height: 100% !important;
+     }
+     
+     .single-post #main .homepage-banner-block-1 .ow-right.ow-event-img,
+     .single-post #main .homepage-banner-block-1 .ow-right.ow-event-img img {
+         position: unset !important;
+     }
+     .single-post #main .homepage-banner-block-1 .ow-right.ow-event-img {
+         width: 100% !important;
+         max-width: unset !important;
+     }
+     .single-post #main .homepage-banner-block-1 .ow-right .ow-decoration-img
+     {
+         display: flex;
+         justify-content: center;
+     }
+     .single-post #main .homepage-banner-block-1 .ow-right.ow-event-img img {
+         max-width: 1000px !important;
+     }
+ }
+
+@media screen and (min-width: 1180px) and (max-width: 1420px) {
+    .ow-cat-grid-wrap {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .ow-prednosti {
+        display: flex;
+        flex-wrap:wrap;
+    }
+    .ow-prednost {
+        max-width: 50% !important;
+        width: 50% !important;
+    }
+
+    ._post-entry-29 .av_textblock_section {
+        margin-left: -150px;
+        max-width: 100% !important;
+    }
+    
+    .avia-menu-text {
+        font-size: 0.9rem;
+    }
+    .ow-review {
+        display: flex !important;
+        flex-direction: column;
+    }
+       #top #main .ow-reviwes-slider-container .review-wrap {
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1179px) {
+    .homepage-banner-block-1 {
+        max-height: unset !important;
+    }
+    .ow-cat-grid-wrap {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .ow-prednosti {
+        margin-left: -20px;
+        margin-bottom: 50px;
+        
+    }
+    .ow-home-slide .right-half > p,
+    .ow-home-slide .right-half > a {
+        margin-left: -20px !important;
+    }
+    .ow-prednost {
+        width: 100%!important;
+        max-width: 100% !important;
+        margin: 10px auto !important;
+        padding-left: 0 !important;
+    }
+    
+    #top #main .ow-reviwes-slider-container .img-wrap {
+        max-width: 61vw !important;
+    }
+    .single-product #main > div.container_wrap.container_wrap_first.main_color.sidebar_right.template-shop.shop_columns_3 > div > div:nth-child(2) > div:nth-child(4) > div.ow-left .ow-event-title {
+        text-align: left !important;
+        padding-left: 30px;
+    }
+    .single-product #main > div.container_wrap.container_wrap_first.main_color.sidebar_right.template-shop.shop_columns_3 > div > div:nth-child(2) > div:nth-child(4) > div.ow-left,
+    .single-product #main > div.container_wrap.container_wrap_first.main_color.sidebar_right.template-shop.shop_columns_3 > div > div:nth-child(2) > div:nth-child(4) > div.ow-right {
+        width: 100% !important;
+    }
+    
+    .page-id-514 #homepage-banner > div > main > div > div > div.flex_column.av_one_half.flex_column_div.av-zero-column-padding.first.avia-builder-el-1.el_before_av_image.avia-builder-el-first.homepage-banner-block-1.container {
+        width: 100% !important;
+    }
+    
+    #spoznajte-block-2 > div > div > div > div > div.flex_column.av_one_half.flex_column_div.av-zero-column-padding.avia-builder-el-7.el_after_av_one_half.avia-builder-el-last.ow-right {
+        width: 100% !important;
+    }
+    
+    #avia-menu > li:not(.av-burger-menu-main) {
+        display: none;
+    }
+    #avia-menu > li.av-burger-menu-main {
+        display: block !important;
+        margin-left: auto;
+    }
+    
+        .post-entry-29 .av_one_half.first  {
+        width: 100% !important;
+    }
+     
+ .single-post #main .ow-left, .single-post #main .ow-right {
+     width: 100% !important;
+     max-width: 100% !important;
+ }
+
+}
+
+@media screen and (max-width: 850px) {
+     .homepage-banner-block-1 .ow-left {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+     .wc_payment_method label {
+    display: flex !important;
+    line-height: 1.5 !important;
+}
+     
+     .homepage-banner-block-1 {
+        max-height: unset !important;
+    }
+    
+    .page-id-29  #homepage-banner > div > main > div > div > div.flex_column.av_one_half.flex_column_div.av-zero-column-padding.first.avia-builder-el-1.el_before_av_image.avia-builder-el-first.homepage-banner-block-1.container,
+    .page-id-29  #spoznajte-block-2 > div > div > div > div > div.flex_column.av_one_half.flex_column_div.av-zero-column-padding.avia-builder-el-7.el_after_av_one_half.avia-builder-el-last.ow-right {
+        width: 100% !important;
+    }
+    
+    .postid-14163 .ow-left,
+.postid-14163 .ow-right,
+.postid-14166 .ow-left,
+.postid-14166 .ow-right,
+.single-product .ow-left,
+.single-product .ow-right,
+.single-post .ow-left, 
+.single-post .ow-right {
+        width: 100% !important;
+    }
+    .page-id-514 .av_one_half.first {
+     width: 100% !important;
+ }
+    .page-id-514 .template-page .entry-content-wrapper {
+    max-width: 100% !important;
+}
+
+    .post-entry-514 .av_one_half .ow-right,
+.post-entry-29 .av_one_half .ow-right {
+    float: right !important;
+    width: 100% !important;
+}
+.post-entry-514 .av_one_half .ow-left,
+.post-entry-29 .av_one_half .ow-left {
+    float: left !important;
+    width: 100% !important;
+}
+
+    .single-post .ow-right .ow-decoration-img,
+    .postid-14163 .ow-right .ow-decoration-img,
+.postid-14166 .ow-right .ow-decoration-img,
+.single-product .ow-right .ow-decoration-img {
+    left: unset !important;
+}
+
+.postid-14163 .ow-right .ow-decoration-img,
+.postid-14166 .ow-right .ow-decoration-img
+ {
+    left: unset !important;
+     
+ }
+ 
+ .single-product #vec .ow-left {
+     width: 100% !important;
+ }
+
+}
+
+/* style_delavnice_po_meri.css 
+.delavnice-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.delavnica {
+    width: calc(33.33% - 20px);
+    background: #f9f9f9;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.delavnica img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.delavnica h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.delavnica p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.delavnica .gumb {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.delavnica .gumb:hover {
+    background: #005177;
+}
+*/
+
