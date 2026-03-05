@@ -1,0 +1,1299 @@
+$success: #E0F1B5;
+
+/* gform */
+#top #wrap_all #main .gform_wrapper {
+
+  form {
+
+    .gform_body {
+      width: 100%;
+      margin-top: 35px;
+
+      /* move label on focus */
+      .gfield {
+        position: relative;
+        margin: 0;
+        padding-right: 0;
+
+        &.ow-post-field, &.ow-city-field{
+          display:inline-block;
+
+          .gfield_label{
+            margin-top:8px;
+          }
+        }
+
+        &.ow-post-field{
+          width: 110px;
+          margin-right:20px !important;
+        }
+
+        &.ow-city-field{
+          width: calc(100% - 130px);
+        }
+
+
+        .gfield_label {
+          color: $body_text;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 15px 0 15px 20px;
+          text-align: left;
+          line-height: 25px;
+          font-weight: 400;
+          font-size: 16px;
+          @include transition(0.3s all ease-in-out);
+          z-index: 1;
+          white-space: nowrap;
+
+          span {
+            @include transition(0.3s all ease-in-out);
+          }
+        }
+
+        .gfield_label.small-label {
+          font-size: 9px;
+          padding-top: 0;
+          padding-left: 5px;
+          height: 0;
+          padding-bottom: 0;
+          @include transition(0.3s all ease-in-out);
+          overflow:visible;
+
+          span {
+            font-size: 9px;
+            @include transition(0.3s all ease-in-out);
+          }
+        }
+      }
+
+      /* gfield section */
+      .gsection {
+        margin: 20px 0 30px 0;
+        padding:0;
+
+        &.ow-form-subtitle {
+          border-bottom: none;
+
+          h2 {
+            color: $body_text;
+            font-family: $font_regular;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.19px;
+            line-height: 28px;
+          }
+        }
+      }
+
+      ul, li, .ginput_container{
+        height:100%;
+      }
+
+      /* text, textarea field style */
+      input[type="text"], textarea {
+        width: 100%;
+        @include border-radius(5px);
+        background-color: $white;
+        border:0;
+        font-size:16px;
+        font-weight: 300;
+        letter-spacing: 0.19px;
+        line-height: 28px;
+        padding-left:20px;
+        color:$body_text;
+      }
+
+
+      input[type="text"]{
+        height:55px;
+
+        &:not([aria-required="true"]){
+          padding-right:70px;
+
+        }
+      }
+
+      /* optional label */
+      .ow-optional{
+        position: absolute;
+        top: 0;
+        font-size: 12px;
+        right: 0;
+        padding:13px 11px;
+        height: 55px;
+        letter-spacing: 0.14px;
+        background:$white;
+        z-index:1;
+        @include border-radius(5px);
+      }
+
+      .ow-info{
+        .ow-optional{
+          display:none;
+        }
+
+        input{
+          padding-right:40px !important;
+        }
+
+        .ow-info-icon-wrap{
+          position:absolute;
+          top:0;
+          right:0;
+          width:40px;
+          height:55px;
+          cursor:pointer !important;
+          z-index: 1;
+        }
+
+        .ow-info-icon{
+            position:absolute;
+            top: 20px;
+            font-size: 10px;
+            right: 15px;
+            height: 15px;
+            width: 15px;
+            line-height:15px;
+            text-align:center;
+            @include border-radius(50%);
+            border: 1px solid $grey6;
+            color:$grey !important;
+            pointer-events:none;
+        }
+
+        .gfield_description{
+          font-size: 12px;
+          line-height: 17px;
+          font-family:$font_light;
+          font-weight:300;
+          height: auto;
+          overflow:hidden;
+          max-height:0;
+          opacity: 0;
+          @include transition(0.2s all ease);
+
+          &.active{
+            max-height: 200px;
+            overflow:auto;
+            opacity: 1;
+          }
+        }
+      }
+
+      textarea{
+        padding-top: 15px;
+        margin-bottom:0;
+      }
+
+      .gfield_description{
+        color: $body_text;
+        font-family:$font_medium;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.19px;
+        line-height: 28px;
+      }
+
+      /* checkbox */
+      .gfield_checkbox {
+        text-align:left;
+        width:100%;
+
+        input[type="checkbox"] {
+          position: absolute;
+          opacity: 0;
+
+          & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            padding-left: 40px;
+            margin-left:0;
+            font-size: 14px;
+            font-weight: 300;
+            color:$body_text;
+            width: 100%;
+            max-width: 100%;
+          }
+
+          & + label:before { /* checkbox square */
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background-color: $white;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            @include border-radius(5px);
+            @include transform(translateY(-50%));
+          }
+
+          &:checked + label:before { /* clicked checkbox */
+            border:0;
+            background-image: url('../images/checkbox.svg');
+            background-repeat:no-repeat;
+            background-size:16px 12px;
+            background-position: center;
+          }
+        }
+      }
+
+      /* radio */
+      .gfield_radio {
+        text-align:left;
+        width:100%;
+
+        li{
+          display:inline-block;
+          margin-right:30px;
+        }
+
+        input[type="radio"] {
+          position: absolute;
+          opacity: 0;
+
+          & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            padding-left: 30px;
+            margin-left:0;
+            font-size: 14px;
+            font-weight: 300;
+            color:$body_text;
+            width: 100%;
+            max-width: 100%;
+            line-height:20px;
+          }
+
+          & + label:before { /* radio circle */
+            content: '';
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            background-color: $body_text;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            border:10px solid $white;
+            @include border-radius(50%);
+            @include transform(translateY(-50%));
+            @include transition(0.2s border ease);
+          }
+
+          &:checked + label:before { /* clicked radio */
+            border-width:5px;
+          }
+        }
+      }
+
+
+
+
+
+      .ow-checkbox .gfield_label{ /* fix for checkbox */
+        display:none;
+      }
+
+      .ow-radio .gfield_label{ /* fix for radio */
+        display:none;
+      }
+
+      .gfield_required{ /* removed * for required fields - added in text */
+        display:none;
+      }
+
+
+      /* FORMS WITH DIFFERENT COLORS */
+      /* errors, validation */
+      .gform_fields .gfield.gfield_error {
+        padding:0;
+        margin:0;
+        border:0;
+        background: $transparent;
+        max-width:100% !important;
+
+        .gfield_label {
+          color: $error_text;
+        }
+
+        input[type="text"], textarea,
+        .gfield_checkbox input[type="checkbox"] + label:before {
+          background-color: $error_bg;
+          color:$body_text;
+        }
+        input[type="checkbox"]:checked + label:before,
+        &.remove-error input[type="checkbox"] + label:before{
+          background-color: $white;
+        }
+      }
+
+      /* footer form */
+      .gfield.ow-bg-dark{ /* add class to field for this style */
+        .gfield_label, .gfield_checkbox input[type="checkbox"] + label{
+          color:$white;
+        }
+        input[type="text"], textarea,
+        .gfield_checkbox input[type="checkbox"] + label:before,
+        &.gfield_error.remove-error input[type="checkbox"] + label:before {
+          background-color:$footer_form_bg;
+          color:$light2;
+        }
+
+        .gfield_checkbox input[type="checkbox"]:checked + label:before{
+          background-image: url('../images/checkbox-light.svg');
+        }
+        }
+
+      /* white background form */
+      .gfield.ow-bg-white{ /* add class to field for this style */
+        input[type="text"], textarea,
+        .gfield_checkbox input[type="checkbox"] + label:before,
+        &.gfield_error.remove-error input[type="checkbox"] + label:before {
+          background-color:$light2;
+          color:$body_text;
+        }
+      }
+      }
+    }
+
+  .gform_anchor{
+    float:left;
+  }
+
+    .validation_error, .validation_message {
+      display: none;
+    }
+
+  /* submit button */
+  .gform_footer{
+    display:inline-block;
+    width:auto;
+    padding:0;
+
+    .gform_button {
+      background:$transparent;
+      font-size: 15px;
+      color:$white;
+      text-transform:uppercase;
+      margin:0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding: 13px 40px;
+      white-space: normal;
+
+      &:focus{
+        outline:none;
+      }
+    }
+  }
+  }
+
+/* newsletter conformation */
+
+#top #wrap_all #gform_widget-2 .gform_confirmation_message {
+  color: $white;
+  font-size: 16px;
+  margin: 60px 0;
+}
+
+
+
+/* popup gravity form */
+#top #main #open-popup.popup-container{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color:$white;
+  z-index: 99;
+  display:none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  #close-popup{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width:38px;
+    height:38px;
+    cursor:pointer;
+    z-index:2;
+  }
+
+  .popup-wrapper {
+    max-width: 568px;
+    left:50%;
+    @include transform(translate(-50%, 0));
+    margin: 70px 0;
+    position:absolute;
+
+    .popup-bg{
+      background-color: $light2;
+      background-image:url('../images/bg-grey.svg');
+      padding:40px;
+      background-size: 1200px;
+
+      .popup-content{
+        a{
+          color:inherit;
+        }
+
+        .gform_wrapper{
+          margin:0;
+        }
+
+        .gform_title{
+          color: $primary2;
+          font-family: $font_medium;
+          font-size: 17px;
+          font-weight: 500;
+          line-height: 25px;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+
+        .gform_description{
+          color: $heading;
+          font-family: $font_medium;
+          font-size: 23px;
+          font-weight: 500;
+          line-height: 30px;
+        }
+
+        .gform_wrapper form{
+          text-align:left;
+
+          .gform_body{
+            max-width: 100%;
+            margin-bottom: 10px;
+
+            .gfield{
+              padding-right:0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#top.opened-popup{
+  #header, #footer, #scroll-top-link, #socket{
+    z-index:0;
+  }
+}
+
+
+
+/* full width button in popup */
+#top #wrap_all #main .popup-content,
+#top #wrap_all #main .ow-custom-form-wrap{
+  .gform_footer{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* ow-custom-form-wrap */
+
+#top #wrap_all #main .ow-custom-form-wrap{
+  background-color: $light2;
+  background-image:url('../images/bg-grey.svg');
+  padding:40px;
+  background-size: 1200px;
+
+  &.naroci-revijo-anchor{
+    margin-top: 40px;
+
+    .gform_wrapper{
+      margin:0;
+    }
+  }
+}
+
+/* recaptcha */
+#top #wrap_all #main .ow-recaptcha{
+  margin: 20px 0 !important;
+
+  @media(max-width:400px){
+    @include transform(scale(0.77));
+    left: -30px;
+    width: 100%;
+  }
+
+  .gfield_label{
+    display:none;
+  }
+
+  .validation_message{
+    display:block !important;
+    background: $error_bg;
+    padding: 10px;
+    margin: 15px 0;
+  }
+}
+
+
+@media only screen and(max-width:580px) {
+
+  #top #main #open-popup.popup-container {
+    .popup-wrapper {
+      width: 100%;
+      left: 0;
+      @include transform(translate(0, 0));
+    }
+
+    #close-popup {
+      right: 10px;
+    }
+  }
+}
+
+@media only screen and(max-width:400px) {
+
+  #top #main #open-popup.popup-container .popup-wrapper .popup-bg{
+     padding:50px 15px;
+  }
+}
+
+
+/* woocommerce forms - checkout */
+
+#top.woocommerce-checkout #wrap_all {
+  /* conditionally show fields */
+  #billing_vat_field, #billing_company_address_field {
+    display: none;
+  }
+
+  #main #av_section_1.main_color {
+    background-color: $light2;
+    background-image: url('../images/bg-grey.svg');
+  }
+
+  /* move label on focus */
+  .form-row {
+    position: relative;
+    padding: 0;
+    margin: 10px 0 0 0;
+
+    &.form-row-wide {
+      clear: both;
+    }
+
+    #billing_postcode_field {
+      width: calc(33% - 20px);
+      margin-right: 20px !important;
+      display: inline-block;
+
+    }
+
+    #billing_city_field {
+      width: 67%;
+      display: inline-block;
+    }
+
+    label:not(.checkbox) {
+      color: $body_text;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 15px 0 15px 20px;
+      text-align: left;
+      line-height: 22px;
+      font-weight: 400;
+      font-size: 16px;
+      @include transition(0.3s all ease-in-out);
+      z-index: 1;
+
+      span {
+        @include transition(0.3s all ease-in-out);
+      }
+
+      &.small-label {
+        font-size: 9px;
+        padding-top: 0;
+        padding-left: 5px;
+        height: 0;
+        padding-bottom: 0;
+        @include transition(0.3s all ease-in-out);
+        overflow:visible;
+
+        span {
+          font-size: 9px;
+          @include transition(0.3s all ease-in-out);
+        }
+      }
+    }
+
+    /* text, textarea field style */
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      width: 100%;
+      @include border-radius(5px);
+      background-color: $white;
+      border:0;
+      font-size:16px;
+      font-weight: 300;
+      letter-spacing: 0.19px;
+      line-height: 28px;
+      padding-left:20px;
+      color:$body_text;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"]{
+      height:55px;
+
+    }
+
+    .form-row:not(.validate-required) input[type="text"],
+    .form-row:not(.validate-required) input[type="email"],
+    .form-row:not(.validate-required) input[type="tel"]{
+      padding-right:70px;
+    }
+  }
+
+  h4 {
+    color: $body_text;
+    font-family: $font_regular;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    margin-bottom:20px;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    background-color:$white !important;
+    color:$body_text !important;
+    -webkit-box-shadow: 0 0 0 50px white inset,0 0 0 50px white inset;
+    -webkit-text-fill-color: $body_text;
+  }
+
+
+  /* optional label */
+  .ow-optional{
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    right: 0;
+    padding:13px 11px;
+    height: 55px;
+    letter-spacing: 0.14px;
+    background:$white;
+    z-index:1;
+    @include border-radius(5px);
+  }
+
+  .ow-info{
+    .ow-optional{
+      display:none;
+    }
+
+    input{
+      padding-right:40px !important;
+    }
+
+    .ow-info-icon-wrap{
+      position:absolute;
+      top:0;
+      right:0;
+      width:40px;
+      height:55px;
+      cursor:pointer !important;
+      z-index: 1;
+    }
+
+    .ow-info-icon{
+      position:absolute;
+      top: 20px;
+      font-size: 10px;
+      right: 15px;
+      height: 15px;
+      width: 15px;
+      line-height:15px;
+      text-align:center;
+      @include border-radius(50%);
+      border: 1px solid $grey6;
+      color:$grey !important;
+      pointer-events:none;
+    }
+
+    .description{
+      font-size: 12px;
+      line-height: 17px;
+      font-family:$font_light;
+      font-weight:300;
+      height: auto;
+      overflow:hidden;
+      max-height:0;
+      opacity: 0;
+      @include transition(0.2s all ease);
+      float: left;
+      padding:0;
+      display:block !important;
+
+      &.active{
+        max-height: 200px;
+        overflow:auto;
+        opacity: 1;
+        padding:15px 0 25px 0;
+      }
+    }
+  }
+
+
+
+  textarea{
+    padding-top: 15px;
+    margin-bottom:0;
+    height:120px;
+    resize: none;
+  }
+
+  label{
+    white-space: normal;
+  }
+
+
+  /* checkbox */
+  .checkbox {
+    text-align:left;
+    width:100%;
+
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+
+      & + .ow-checkbox-label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        padding-left: 40px;
+        margin-left:0;
+        color:$body_text;
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.19px;
+        line-height: 28px;
+        display: inline-block;
+      }
+
+      & + .ow-checkbox-label::before { /* checkbox square */
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include border-radius(5px);
+        @include transform(translateY(-50%));
+      }
+
+      &:checked + .ow-checkbox-label:before { /* clicked checkbox */
+        border:0;
+        background-image: url('../images/checkbox.svg');
+        background-repeat:no-repeat;
+        background-size:16px 12px;
+        background-position: center;
+      }
+
+      .ow-checkbox-label{
+        text-transform:none !important;
+      }
+    }
+  }
+
+  .required, span.optional{
+    display:none;
+  }
+
+  .ow-custom-submit{
+    width:100%;
+    margin: 40px 0;
+  }
+
+  .custom_button {
+    padding: 0;
+    width:100%;
+
+    #place_order {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      padding: 13px 20px;
+      background: transparent;
+      border: none;
+      @include border-radius(100px);
+      font-size: 15px;
+      color:$white;
+      text-decoration:none !important;
+      text-transform: uppercase;
+    }
+  }
+
+  .col-2{
+    padding-top:0;
+  }
+
+  /* FORMS WITH DIFFERENT COLORS */
+  /* errors, validation */
+  .woocommerce-invalid-required-field, .woocommerce-invalid{
+    label{
+      color: $error_text !important;
+    }
+    input, textarea, .ow-checkbox-label::before{
+      background-color: $error_bg !important;
+      color:$body_text;
+    }
+
+    .ow-checkbox-label::before{
+      @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.1));
+    }
+
+    input[type="checkbox"]:checked + .ow-checkbox-label::before{
+      background-color: $white !important;
+    }
+  }
+}
+
+#ow_event_fields{
+  margin-bottom:50px;
+
+  h3{
+    margin-bottom: 15px;
+  }
+}
+
+.tax_label{
+  display:none;
+}
+
+#top #main #order_review{
+  table,tbody,tr,td, th{
+    background:$transparent;
+  }
+
+  th,td{
+    border:none;
+
+    b, strong span {
+      color: $body_text;
+      font-family: $font_regular;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.19px;
+      line-height: 28px;
+    }
+  }
+
+  .cart-subtotal, .tax-rate{
+    border-bottom:1px solid $primary4;
+  }
+
+  th{
+    padding-left:0;
+    color: $body_text;
+    font-family: $font_light;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    text-transform:none;
+  }
+
+  td{
+    padding-right:0;
+    text-align:right;
+  }
+}
+
+
+
+.woocommerce-checkout .blockUI.blockOverlay{
+  position: relative;
+  background-color:$transparent !important;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:10;
+  }
+
+  &::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    @include border-radius(50%);
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 15px);
+    z-index:10;
+    @include animation (0s, 2s, spin, infinite);
+    border:{
+      left:5px solid $primary3;
+      right:5px solid $primary3;
+      bottom:5px solid $primary3;
+      top:5px solid $transparent;
+    }
+  }
+}
+
+
+#top #main #payment{
+  background-color: $transparent;
+  border:none;
+
+  ul.wc_payment_methods {
+    padding: 0;
+
+    li {
+      background-color: $transparent;
+      border: none;
+      padding: 5px 0;
+      display: inline-block;
+      margin-right: 30px;
+      text-align: left;
+      width: 100%;
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+
+        & + label {
+          position: relative;
+          cursor: pointer;
+          padding: 0;
+          padding-left: 30px;
+          margin-left: 0;
+          color: $body_text;
+          width: 100%;
+          max-width: 100%;
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0.19px;
+          line-height: 28px;
+        }
+
+        & + label:before { /* radio circle */
+          content: '';
+          margin-right: 10px;
+          display: inline-block;
+          vertical-align: text-top;
+          width: 20px;
+          height: 20px;
+          @include box-sizing(border-box);
+          background-color: $body_text;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          border: 10px solid $white;
+          @include border-radius(50%);
+          @include transform(translateY(-50%));
+          @include transition(0.2s border ease);
+        }
+
+        &:checked + label:before { /* clicked radio */
+          border-width: 5px;
+        }
+      }
+    }
+  }
+
+  label[for="payment_method_paypal"]{
+    img, a, .about_paypal {
+      display:none !important;
+    }
+  }
+}
+
+#payment{
+  margin-top:0;
+}
+
+#top.woocommerce-checkout #wrap_all #payment .place-order, .woocommerce-additional-fields, .woocommerce-billing-fields__field-wrapper-after, #ow-checkout-billing-address{
+  margin-top:30px;
+  clear:both;
+}
+
+.clear{
+  clear:both;
+}
+
+#billing_postcode_field{
+  width:110px;
+  margin-right:20px;
+}
+
+#billing_city_field{
+  width:calc(100% - 130px);
+}
+
+@media(max-width:400px){
+  #billing_postcode_field{
+    width:100px;
+    margin-right:10px;
+  }
+
+  #billing_city_field{
+    width:calc(100% - 110px);
+  }
+  #top.woocommerce-checkout #wrap_all .form-row label:not(.checkbox){
+    padding-left:12px;
+  }
+}
+
+.ow_new_person{
+  margin:0 0 30px 0;
+}
+
+#top #payment li:not(.payment_method_stripe) div.payment_box{
+  padding:0;
+  display:none !important;
+}
+
+#top #payment div.payment_box{
+  width: 100%;
+  padding-right: 0;
+}
+
+#top #main #stripe-payment-data {
+  p{
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  label{
+    color: rgba(35,31,32,0.8);
+    font-family: "Montserrat Regular",sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0;
+  }
+
+  #wc-stripe-cc-form{
+    padding:0;
+    margin:0;
+
+    .stripe-source-errors{
+      margin-top:25px;
+    }
+  }
+
+  .wc-stripe-elements-field{
+    height: 55px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: $white;
+    border: 0;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    padding-left: 20px;
+    color: rgba(35,31,32,0.8);
+
+    div{
+      height:100%;
+    }
+
+    iframe{
+      height:100% !important;
+    }
+
+    &.invalid{
+      background-color: $error_bg;
+    }
+  }
+
+  #stripe-card-element{
+    padding-right: 45px;
+  }
+}
+
+
+#top #main .ow_remove_ticket{
+  cursor:pointer;
+  display: inline-block;
+  line-height: 30px;
+  padding-bottom:10px;
+  float: right;
+  font-size: 14px;
+  @include transition(0.3s all ease);
+
+  &:hover{
+    cursor:pointer;
+    color:$primary3;
+  }
+}
+
+#top #wrap_all #main .ow_add_ticket{
+  cursor:pointer;
+  height: 40px;
+  display:inline-block;
+
+  .plus{
+    cursor:pointer;
+    font-size:30px;
+    font-family:$font_regular;
+    line-height: 40px;
+    width:30px;
+    display:inline-block;
+    vertical-align: top;
+    @include transition(0.3s all ease);
+    @include transform(scale(1));
+  }
+
+  .text{
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: top;
+    cursor:pointer;
+  }
+
+  &:hover{
+    cursor:pointer;
+
+
+    .plus{
+      @include transform(scale(1.2));
+    }
+  }
+}
+
+
+table.shop_table{
+  margin-bottom:35px;
+}
+
+
+@media only screen and(max-width:767px) {
+  .responsive #top .col2-set .ow-col{
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+  }
+
+}
+
+
+
+
+#top.woocommerce-checkout .woocommerce .woocommerce-message{
+  padding: 10px 20px;
+  background:$success;
+}
+
+#top.woocommerce-checkout .woocommerce .woocommerce-info,
+#top.woocommerce-checkout .woocommerce .wc-stripe-error,
+#top.woocommerce-checkout .woocommerce .woocommerce-error{
+  padding: 10px 20px;
+  background:$error_bg;
+  border: none;
+  border-radius: 5px;
+  color:$body_text;
+  list-style: none;
+  margin-left: 0;
+
+  li{
+    color:$body_text;
+  }
+}
+
+.ow-move-coupon-wrapper .woocommerce-info {display: none !important;}
+
+
+#top.woocommerce-checkout #wrap_all .woocommerce .showcoupon {
+  display: inline-block;
+  cursor:pointer;
+  text-decoration:none;
+  text-transform:none !important;
+  @include transition(0.3s all ease);
+
+  p{
+    color:inherit !important;
+    cursor:inherit !important;
+    text-decoration:none;
+  }
+}
+
+#top.woocommerce-checkout #wrap_all #main .ow-move-coupon-wrapper {
+
+  & > .woocommerce-form-coupon-toggle{
+    cursor:pointer;
+  }
+  & > .woocommerce-form-coupon-toggle, & > h4 {
+    display: inline-block !important;
+  }
+
+  .coupon-input-wrap{
+    width: calc(100% - 160px);
+    margin-top: 0;
+
+    @media(max-width:400px){
+      width: calc(100% - 115px);
+    }
+  }
+
+  .coupon-submit-wrap{
+    width:160px;
+    float:left;
+    margin-top: 0;
+
+    @media(max-width:400px){
+      width: 115px;
+    }
+
+    .btn-coupon{
+      height: 55px;
+      padding: 0;
+      width: calc(100% - 5px);
+      background: $primary1;
+      color: white;
+      border: none;
+      margin-left: 5px;
+      @include border-radius(5px);
+    }
+  }
+}

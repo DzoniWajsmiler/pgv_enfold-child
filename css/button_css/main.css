@@ -1,0 +1,74 @@
+
+.svg-filters {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px; }
+
+.button--1 {
+  -webkit-font-smoothing: antialiased;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  user-select: none;
+  padding: 13px 40px;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.1s ease-out;
+  -moz-transition: background-color 0.1s ease-out;
+  transition: background-color 0.1s ease-out;
+  position: relative;
+  z-index: 0;
+}
+
+  .button--1:focus {
+    outline: none;
+  }
+
+.safari .ow-button, .safari .button__bg {
+  -webkit-filter: none !important;
+  filter: none !important; }
+
+  .button--1 .button__container {
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: 400%;
+    top: -150%;
+    left: -50%;
+    pointer-events: none;
+    z-index: -1;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out; }
+  .button--1 .button__bg {
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    top: 50%;
+    left: 25%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .button--1 .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    -webkit-transition: background-color 0.1s ease-out;
+    -moz-transition: background-color 0.1s ease-out;
+    transition: background-color 0.1s ease-out; }
+    .button--1 .circle.top-left {
+      top: 40%;
+      left: 27%; }
+    .button--1 .circle.bottom-right {
+      bottom: 40%;
+      right: 27%; }
+
+

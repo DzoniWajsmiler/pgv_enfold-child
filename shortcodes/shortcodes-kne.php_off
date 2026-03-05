@@ -1,0 +1,314 @@
+<?php
+
+
+
+function list_order_information($order) {
+
+
+
+	if($_SERVER["REMOTE_ADDR"] != "89.212.96.1") return false;
+
+
+
+	echo '<table style="width:100%; text-align:left; border-collapse: collapse; color:#636363; margin-bottom:20px;"">';
+
+
+
+	echo '<tr>';
+
+	echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Naročnik</strong></th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Ime in priimek') . '</strong></th>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_full_name', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Delovno mesto') . '</strong></th>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_company', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('E-pošta') . '</strong></th>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_email', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Telefon') . '</strong></th>';
+
+    echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_phone', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+	echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Dodatne osebe</strong></th>';
+
+	echo '</tr>';
+
+
+
+    $i = 0;
+
+    foreach (get_post_meta($order->get_id()) as $data_key => $data_value) {
+
+
+
+        if (strpos($data_key, '_additional_full_name_') > -1) {
+
+            $i++;
+
+
+
+		echo '<tr>';
+
+			echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Dodatna oseba ' . $i . ':</strong></th>';
+
+		echo '</tr>';
+
+
+
+
+
+		echo '<tr>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Ime in priimek') . '</strong></th>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), $data_key, true) . '</th>';
+
+		echo '</tr>';
+
+
+
+
+
+        }
+
+
+
+        if (strpos($data_key, '_additional_company_') > -1) {
+
+		echo '<tr>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Delovno mesto') . '</strong></th>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), $data_key, true) . '</th>';
+
+		echo '</tr>';
+
+        }
+
+
+
+        if (strpos($data_key, '_additional_email_') > -1) {
+
+		echo '<tr>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('E-pošta') . '</strong></th>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), $data_key, true) . '</th>';
+
+		echo '</tr>';
+
+        }
+
+
+
+        if (strpos($data_key, '_additional_phone_') > -1) {
+
+		echo '<tr>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Telefonska številka') . '</strong></th>';
+
+			echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), $data_key, true) . '</th>';
+
+		echo '</tr>';
+
+        }
+
+    }
+
+
+
+	echo '<tr>';
+
+	echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Naslov za plačilo</strong></th>';
+
+	echo '</tr>';
+
+
+
+    if (get_post_meta($order->get_id(), '_billing_on_company', true) == true) {
+
+        $payment_on_company = "DA";
+
+    } else {
+
+        $payment_on_company = "NE";
+
+    }
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Plačilo na podjetje') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . $payment_on_company . '</th>';
+
+	echo '</tr>';
+
+
+
+    if ($payment_on_company == "DA") {
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Davčna številka') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_vat', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Podjetje') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_company_address', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+    }
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Naslov') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_address_1', true) . '</th>';
+
+	echo '</tr>';
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Poštna št.') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_postcode', true) . '</th>';
+
+	echo '</tr>';
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Mesto') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_billing_city', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+	echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Opombe</strong></th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Opombe') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . $order->customer_note . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+		echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Način plačila</strong></th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Način plačila') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . get_post_meta($order->get_id(), '_payment_method_title', true) . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '<tr>';
+
+		echo '<th style="color:rebeccapurple; border:0px solid black!important; padding-left:0px; font-size:18px;"><strong>Soglasje za prejemanje novic</strong></th>';
+
+	echo '</tr>';
+
+
+
+    if (get_post_meta($order->get_id(), '_privacy-policy-checkbox', true) == true) {
+
+        $agreement = "DA";
+
+    } else {
+
+        $agreement = "NE";
+
+    }
+
+
+
+	echo '<tr>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit"><strong>' . __('Soglasje') . '</strong></th>';
+
+		echo '<th style="border:solid 2px #e5e5e5; font-weight: inherit">' . $agreement . '</th>';
+
+	echo '</tr>';
+
+
+
+	echo '</table>';
+
+
+
+
+
+}
+
+
+

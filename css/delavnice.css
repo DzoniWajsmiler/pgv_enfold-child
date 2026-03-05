@@ -1,0 +1,240 @@
+/* === GRID layout (original Enfold-style) === */
+.ow_event_list_sec.ow-cat-grid-wrap {
+    display: grid;
+    grid-gap: 44px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .ow_event_list_sec.ow-cat-grid-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ow_event_list_sec.ow-cat-grid-wrap {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Naslovi sklopov (taxonomy) */
+h3.delavnica-sklop-naslov {
+    color: white !important;
+    font-weight: 900 !important;
+    cursor: default !important;
+    font-family: "Montserrat Light", sans-serif !important;
+    font-size: 20px !important;
+    letter-spacing: 0.19px !important;
+    line-height: 28px !important;
+    padding: 15px 0 !important;
+    margin: 30px 0 0px 0 !important;
+    text-transform: uppercase !important;
+}
+
+
+/* (Opcijsko): posebne barve po kategorijah */
+.delavnica-sklop-naslov.vodenje { color: #f0c000; }
+.delavnica-sklop-naslov.vtrendu { color: #9d00ff; }
+.delavnica-sklop-naslov.top4    { color: #00aaff; }
+
+/* === ENA DELAVNICA (kartica) === */
+.delavnica.ow-single-event {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.delavnica.ow-single-event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* === Oznaka "DELAVNICA" === */
+.delavnica-oznaka {
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-family: "Montserrat Medium", sans-serif !important;
+    color: rgba(35, 31, 32, 0.8);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+}
+
+/* === Slika delavnice === */
+.delavnica-slika {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* === Naslov delavnice === */
+.delavnica-naslov {
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #231f20 !important;
+    margin: 0 0 10px 0;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    padding-bottom: 20px;
+}
+
+/* === Termin === */
+.delavnica-termin {
+    font-size: 16px;
+    margin: 0;
+    color: rgba(35, 31, 32, 0.8);
+    font-family: "Montserrat Light", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.19px;
+    line-height: 28px;
+    margin-top: auto;
+}
+
+/* === GUMB z animacijo (custom button) === */
+.ow_button_container {
+    margin-top: 15px;
+}
+
+.ow-button.custom_button.button--1 {
+    display: inline-block;
+    position: relative;
+    padding: 12px 24px;
+    color: #fff;
+    background-color: #6a1b9a;
+    border-radius: 5px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.ow-button.custom_button.button--1:hover {
+    background-color: #4a148c;
+}
+
+.ow-button .button__container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ow-button .circle {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 1.5s infinite;
+}
+
+.ow-button .top-left {
+    align-self: flex-start;
+}
+
+.ow-button .bottom-right {
+    align-self: flex-end;
+}
+
+.ow-button .button__bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* === Animacija kroga === */
+@keyframes pulse {
+    0%   { transform: scale(1); opacity: 0.3; }
+    50%  { transform: scale(1.5); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0.3; }
+}
+
+/* === Responsive prilagoditve === */
+@media (max-width: 1024px) {
+    .delavnica-naslov {
+        font-size: 18px;
+    }
+
+    .delavnica-termin {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .delavnica-naslov {
+        font-size: 16px;
+    }
+
+    .delavnica-termin {
+        font-size: 13px;
+    }
+
+    .ow-button.custom_button.button--1 {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+}
+.ow-single-event {
+    background-color: rgba(0, 255, 0, 0.05); /* da vidiš meje */
+}
+
+.ow-cat-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.ow-cat-button.ow-cat-control {
+    padding: 10px 20px;
+    background-color: #6a1b9a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.ow-cat-button.ow-cat-control:hover {
+    background-color: #4a148c;
+}
+
+.ow-cat-button.ow-anchor-link {
+    display: inline-block;
+    padding: 10px 22px;
+    background-color: #6a1b9a !important;
+    color: #fff !important;
+    border-radius: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.ow-cat-button.ow-anchor-link:hover {
+    background-color: #4a148c !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transform: translateY(-2px) !important;
+
+}
+
